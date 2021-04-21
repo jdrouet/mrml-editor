@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { MrmlEditor } from '.';
 
-describe('ExampleComponent', () => {
+describe('MrmlEditor', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
-  })
-})
+    expect(MrmlEditor).toBeTruthy();
+  });
+});

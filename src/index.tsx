@@ -1,10 +1,11 @@
-import * as React from 'react'
-import styles from './styles.module.css'
+import * as React from 'react';
+import type { Mjml } from 'mrml-typings';
 
-interface Props {
-  text: string
-}
+export type MrmlEditorProps = {
+  value: Mjml;
+};
 
-export const ExampleComponent = ({ text }: Props) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
+export const MrmlEditor: React.FC<MrmlEditorProps> = ({ value }) => {
+  console.log({ value });
+  return <div>Example Component</div>;
+};

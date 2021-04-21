@@ -1,10 +1,7 @@
-import React from 'react'
-
-import { ExampleComponent } from 'mrml-editor'
-import 'mrml-editor/dist/index.css'
+import React from 'react';
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
-}
+  return <div />;
+};
 
-export default App
+export default App;

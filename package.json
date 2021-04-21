@@ -1,10 +1,10 @@
 {
-  "name": "mrml-editor",
+  "name": "storybook-testing",
   "version": "1.0.0",
-  "description": "Editor for mrml",
+  "description": "Made with create-react-library",
   "author": "jdrouet",
   "license": "MIT",
-  "repository": "jdrouet/mrml-editor",
+  "repository": "jdrouet/storybook-testing",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
@@ -12,6 +12,7 @@
     "node": ">=10"
   },
   "scripts": {
+    "format": "prettier -w 'src/{,**/}*.{ts,tsx}'",
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
@@ -21,12 +22,19 @@
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "react": "^16.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@storybook/addon-actions": "^6.2.8",
+    "@storybook/addon-essentials": "^6.2.8",
+    "@storybook/addon-links": "^6.2.8",
+    "@storybook/react": "^6.2.8",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -36,8 +44,8 @@
     "@types/react-dom": "^16.9.7",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
-    "microbundle-crl": "^0.13.10",
     "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.2.2",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
@@ -50,6 +58,7 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^2.2.0",
+    "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
     "react": "^16.13.1",
@@ -59,5 +68,13 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/styles": "^4.11.3",
+    "mrml-typings": "^1.2.0",
+    "react-dnd": "^14.0.2",
+    "react-dnd-html5-backend": "^14.0.0"
+  }
 }
