@@ -1,9 +1,9 @@
 import React from 'react';
-import type { Story, Meta } from '@storybook/react';
-
-import HomeIcon from '@material-ui/icons/Home';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+
+import HomeIcon from '@material-ui/icons/Home';
+import type { Story, Meta } from '@storybook/react';
 
 import { PaletteButton, PaletteButtonProps } from './PaletteButton';
 

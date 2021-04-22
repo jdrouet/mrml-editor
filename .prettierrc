@@ -6,5 +6,7 @@
   "jsxBracketSameLine": false,
   "jsxSingleQuote": false,
   "arrowParens": "always",
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "importOrder": ["^[a-z]", "^@", "^[./]"],
+  "importOrderSeparation": true
 }

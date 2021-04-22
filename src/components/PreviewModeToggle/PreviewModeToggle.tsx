@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 
-import ToggleButton from '@material-ui/lab/ToggleButton';
-import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import ComputerIcon from '@material-ui/icons/Computer';
 import MobileIcon from '@material-ui/icons/Smartphone';
+import ToggleButton from '@material-ui/lab/ToggleButton';
+import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 
 import type { PreviewMode } from '../../typings/preview-mode';
 

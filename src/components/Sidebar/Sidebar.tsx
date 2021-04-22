@@ -1,17 +1,18 @@
-import React from 'react';
 import cn from 'classnames';
+import type { MjImage, MjText } from 'mrml-typings';
+import React from 'react';
+
 import type { Theme } from '@material-ui/core';
-import makeStyles from '@material-ui/styles/makeStyles';
 import Drawer from '@material-ui/core/Drawer';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import ImageIcon from '@material-ui/icons/Image';
 import TextIcon from '@material-ui/icons/Title';
-import type { MjImage, MjText } from 'mrml-typings';
+import makeStyles from '@material-ui/styles/makeStyles';
 
+import type { PreviewMode } from '../../typings/preview-mode';
 import { PaletteButton } from '../PaletteButton';
 import { PreviewModeToggle } from '../PreviewModeToggle';
-import type { PreviewMode } from '../../typings/preview-mode';
 
 const useStyle = makeStyles((theme: Theme) => ({
   root: {
@@ -52,7 +53,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <Typography variant="overline">Preview Mode</Typography>
           </Grid>
           <Grid item xs={12}>
-            <PreviewModeToggle onChange={onChangePreviewMode} value={previewMode} />
+            <PreviewModeToggle
+              onChange={onChangePreviewMode}
+              value={previewMode}
+            />
           </Grid>
           <Grid item xs={12}>
             <Typography variant="overline">Elements</Typography>

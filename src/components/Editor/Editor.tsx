@@ -1,10 +1,11 @@
-import React from 'react';
 import type { Mjml, MjHead, MjBody } from 'mrml-typings';
+import React from 'react';
+
 import makeStyles from '@material-ui/styles/makeStyles';
 
+import type { PreviewMode } from '../../typings/preview-mode';
 import { Document } from '../Document';
 import { Sidebar } from '../Sidebar';
-import type { PreviewMode } from '../../typings/preview-mode';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -58,7 +59,7 @@ export const Editor: React.FC<EditorProps> = ({ onChange, value }) => {
     <div className={classes.root}>
       <Sidebar
         className={classes.sidebar}
-        anchor='left'
+        anchor="left"
         previewMode={previewMode}
         onChangePreviewMode={setPreviewMode}
       />

@@ -1,10 +1,11 @@
-import React from 'react';
 import cn from 'classnames';
-import makeStyles from '@material-ui/styles/makeStyles';
 import type { MjBody, MjHead } from 'mrml-typings';
+import React from 'react';
+
+import type { Theme } from '@material-ui/core';
+import makeStyles from '@material-ui/styles/makeStyles';
 
 import type { PreviewMode } from '../../typings/preview-mode';
-import type { Theme } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
