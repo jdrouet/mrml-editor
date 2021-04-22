@@ -1,7 +1,8 @@
 import React from 'react';
+import cn from 'classnames';
 import type { Theme } from '@material-ui/core';
 import makeStyles from '@material-ui/styles/makeStyles';
-import Drawer, { DrawerProps } from '@material-ui/core/Drawer';
+import Drawer from '@material-ui/core/Drawer';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import ImageIcon from '@material-ui/icons/Image';
@@ -9,12 +10,15 @@ import TextIcon from '@material-ui/icons/Title';
 import type { MjImage, MjText } from 'mrml-typings';
 
 import { PaletteButton } from '../PaletteButton';
+import { PreviewModeToggle } from '../PreviewModeToggle';
+import type { PreviewMode } from '../../typings/preview-mode';
 
 const useStyle = makeStyles((theme: Theme) => ({
   root: {
     padding: theme.spacing(),
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
+    maxWidth: 250 - theme.spacing(4),
   },
 }));
 
@@ -26,32 +30,40 @@ const TEXT_ELEMENT: MjText = {
 };
 
 export type SidebarProps = {
+  className?: string;
   anchor: 'left' | 'right';
-  open: DrawerProps['open'];
-  variant: DrawerProps['variant'];
+  previewMode: PreviewMode;
+  onChangePreviewMode: (value: PreviewMode) => void;
 };
 
 export const Sidebar: React.FC<SidebarProps> = ({
+  className,
   anchor = 'left',
-  open,
-  variant,
+  previewMode,
+  onChangePreviewMode,
 }) => {
   const classes = useStyle();
 
   return (
-    <Drawer anchor={anchor} open={open} variant={variant}>
-      <div className={classes.root}>
+    <Drawer anchor={anchor} open variant="permanent">
+      <div className={cn(className, classes.root)}>
         <Grid container spacing={1}>
           <Grid item xs={12}>
-            <Typography variant='overline'>Elements</Typography>
+            <Typography variant="overline">Preview Mode</Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <PreviewModeToggle onChange={onChangePreviewMode} value={previewMode} />
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="overline">Elements</Typography>
           </Grid>
           <Grid item xs={12} md={6}>
-            <PaletteButton element={TEXT_ELEMENT} name='Text' icon={TextIcon} />
+            <PaletteButton element={TEXT_ELEMENT} name="Text" icon={TextIcon} />
           </Grid>
           <Grid item xs={12} md={6}>
             <PaletteButton
               element={IMAGE_ELEMENT}
-              name='Image'
+              name="Image"
               icon={ImageIcon}
             />
           </Grid>

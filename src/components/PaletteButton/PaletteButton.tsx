@@ -1,4 +1,3 @@
-import ButtonBase from '@material-ui/core/ButtonBase';
 import Card from '@material-ui/core/Card';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -51,10 +50,10 @@ export const PaletteButton: React.FC<PaletteButtonProps> = ({
       innerRef={dragRef}
       className={classes.root}
       style={style}
-      variant='outlined'
+      variant="outlined"
     >
       <Icon className={classes.icon} />
-      <Typography component='div' variant='caption'>
+      <Typography component="div" variant="caption">
         {name}
       </Typography>
     </Card>
